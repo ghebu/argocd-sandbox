@@ -1,0 +1,28 @@
+piVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: main-applicationset
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/ghebu/argocd-sandbox.git 
+      revision: HEAD 
+      directories:
+      - path: "apps/*"
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/ghebu/argocd-sandbox.git 
+        targetRevision: main
+        path: 'apps/*'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{path.basename}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+
