@@ -16,7 +16,7 @@ spec:
     spec:
       project: teama 
       source:
-        repoURL: git@github.com:ghebu/helm-webapp.git 
+        repoURL: https://github.com/ghebu/helm-webapp.git 
         targetRevision: HEAD
         path: "solution/{{appName}}"
         helm:
