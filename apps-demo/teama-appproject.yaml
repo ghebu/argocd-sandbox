@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: teamalpha
+  namespace: argocd-customer
+spec:
+  destinations:
+  - name: in-cluster
+    namespace: '!{webapp-appset, argocd-main}'
+  - name: in-cluster
+    namespace: '*'
+    server: https://kubernetes.default.svc
+  sourceRepos:
+  - https://github.com/devopsjourney1/helm-webapp.git
+  - git@github.com:ghebu/helm-webapp.git
+status: {}
