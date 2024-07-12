@@ -29,10 +29,10 @@ spec:
         # Default base cluster
         name: in-cluster
         namespace: "{{namespace}}"
-      syncPolicy:
-        automated:
-          prune: true
-          selfHeal: true
+      # syncPolicy:
+      #   automated:
+      #     prune: true
+      #     selfHeal: true
         syncOptions:
           - CreateNamespace=true
 
