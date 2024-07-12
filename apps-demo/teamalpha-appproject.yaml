@@ -10,6 +10,9 @@ spec:
   - name: in-cluster
     namespace: '*'
     server: https://kubernetes.default.svc
+  - name: in-cluster
+    namespace: 'appset-demo'
+    server: https://kubernetes.default.svc
   sourceRepos:
   - https://github.com/devopsjourney1/helm-webapp.git
   - git@github.com:ghebu/helm-webapp.git

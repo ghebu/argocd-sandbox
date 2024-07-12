@@ -14,7 +14,7 @@ spec:
       annotations:
         argocd.argoproj.io/manifest-generate-paths: ".;.."
     spec:
-      project: teama 
+      project: default 
       source:
         repoURL: https://github.com/ghebu/helm-webapp.git 
         targetRevision: HEAD
